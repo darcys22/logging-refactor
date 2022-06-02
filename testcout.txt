@@ -1,0 +1,21 @@
+OXEN_LOG(err, "x: " << x << " y: " << y );
+OXEN_LOG(error, "Failed to set journal mode to WAL: {}" << sqlite3_errstr(rc));
+OXEN_LOG(error, "Failed to set synchronous mode to NORMAL: {}" << sqlite3_errstr(rc));
+OXEN_LOG(err, "RPC error: " << e.to_string());
+OXEN_LOG(err, "unknown transfer error: " << e.to_string());
+OXEN_LOG(err, "Multisig error: " << e.to_string());
+OXEN_LOG(err, "internal error: " << e.to_string());
+OXEN_LOG(err, "unexpected error: " << e.what());
+OXEN_LOG(err, "Error exporting multisig info: " << e.what());
+OXEN_LOG(err, "unexpected error: " << e.what());
+OXEN_LOG(warn, "Device reconnect failed: " << e.what());
+OXEN_LOG(trace, "wallet_path: " << wallet_path);
+OXEN_LOG(err, "RPC error: " << e.to_string());
+OXEN_LOG(err, "refresh error: " << e.to_string());
+OXEN_LOG(err, "internal error: " << e.to_string());
+OXEN_LOG(err, "unexpected error: " << e.what());
+OXEN_LOG(err, "RPC error: " << e.to_string());
+OXEN_LOG(err, "unexpected error: " << e.what());
+OXEN_LOG(err, "Error exporting key images: " << e.what());
+OXEN_LOG(err, "Error exporting outputs: " << e.what());
+OXEN_LOG(trace, "keys_file_exists: " << std::boolalpha << keys_file_exists << std::noboolalpha
