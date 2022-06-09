@@ -33,7 +33,7 @@ for line in data:
         if end == 0:
             end = len(line[result+8:])
         levelcomma = line[result+8:].find(",")
-        params_in_log = line[result+10+levelcomma:result+10+levelcomma+end-1].split("<<")
+        params_in_log = line[result+9+levelcomma:result+8+end].split("<<")
         new_string = []
         new_params = []
         for param in params_in_log:
@@ -46,7 +46,9 @@ for line in data:
 
         newstring = "".join(new_string)
         newparams = ", ".join(new_params)
-        output.append(line[:result+9+levelcomma] + ' "' + newstring + '", ' + newparams + line[result+9+end-1:])
+        if len(newparams) > 0:
+            newparams = ", " + newparams
+        output.append(line[:result+9+levelcomma] + ' "' + newstring + '"' + newparams + line[result+8+end:])
 
 
     else:

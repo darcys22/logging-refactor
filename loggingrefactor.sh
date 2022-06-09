@@ -13,21 +13,15 @@
 #sed -i 's/MDEBUG(/OXEN_LOG(debug, /g' $1
 #sed -i 's/MTRACE(/OXEN_LOG(trace, /g' $1
 
-sed -i 's/MGINFO(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_RED(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_GREEN(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_YELLOW(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_BLUE(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_MAGENTA(/OXEN_LOG(info, /g' $1
-sed -i 's/MGINFO_CYAN(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_RED(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_GREEN(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_YELLOW(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_BLUE(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_MAGENTA(/OXEN_LOG(info, /g' $1
+#sed -i 's/MGINFO_CYAN(/OXEN_LOG(info, /g' $1
 
-#define MGINFO(x) MCINFO("global",x)
-#define MGINFO_RED(x) MCLOG_RED(el::Level::Info, "global",x)
-#define MGINFO_GREEN(x) MCLOG_GREEN(el::Level::Info, "global",x)
-#define MGINFO_YELLOW(x) MCLOG_YELLOW(el::Level::Info, "global",x)
-#define MGINFO_BLUE(x) MCLOG_BLUE(el::Level::Info, "global",x)
-#define MGINFO_MAGENTA(x) MCLOG_MAGENTA(el::Level::Info, "global",x)
-#define MGINFO_CYAN(x) MCLOG_CYAN(el::Level::Info, "global",x)
+sed -i 's/OXEN_LOG(info, /oxenlog::info(/g' $1
 
 
 

@@ -2,7 +2,7 @@
 
 test:
 	cp testcout.txt testcout-adjusted.txt
-	python3 couttofmt.py testcout.txt
+	python3 couttofmt.py testcout-adjusted.txt
 
 clean:
 	rm testcout-adjusted.txt
