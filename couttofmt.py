@@ -54,7 +54,7 @@ for line in data:
 
 # print("".join(output))
 with open(sys.argv[1], 'w', encoding='utf-8') as file:
-    file.writelines(data)
+    file.writelines(output)
 
 
 
