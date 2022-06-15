@@ -27,9 +27,10 @@ with open(sys.argv[1], 'r', encoding='utf-8') as file:
 
 output = []
 for line in data:
-    result = line.find("oxenlog")
+    oxenlog_position = line.find("oxenlog")
+    cout_position = line.find("<<")
     # print("line: ", line)
-    if result >= 0:
+    if oxenlog_position >= 0 and cout_position >= 0:
         start_parentheses = line.find("(")
         # print("start parenthesis: ", start_parentheses)
         # print("start parenthesis: ", line[start_parentheses])
@@ -67,9 +68,9 @@ for line in data:
     else:
         output.append(line)
 
-# print("".join(output))
-with open(sys.argv[1], 'w', encoding='utf-8') as file:
-    file.writelines(output)
+print("".join(output))
+# with open(sys.argv[1], 'w', encoding='utf-8') as file:
+    # file.writelines(output)
 
 
 
