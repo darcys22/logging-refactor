@@ -1,6 +1,13 @@
 #!/bin/python3
 
-import sys
+import argparse
+
+parser = argparse.ArgumentParser(description='Update cout to fmt script')
+parser.add_argument('--update', help="modifys the file", action='store_true')
+parser.add_argument('--no-update', help="prints to console", dest='update', action='store_false')
+parser.add_argument("--file", help="The file to run the script over", type=str)
+parser.set_defaults(update=False)
+args = parser.parse_args()
 
 def find_parentheses_match(input_string):
     s = []
@@ -22,7 +29,10 @@ def find_parentheses_match(input_string):
 
     return 0
 
-with open(sys.argv[1], 'r', encoding='utf-8') as file:
+if not (args.file):
+    parser.error('No file provided.')
+
+with open(args.file, 'r', encoding='utf-8') as file:
     data = file.readlines()
 
 output = []
@@ -68,9 +78,12 @@ for line in data:
     else:
         output.append(line)
 
-print("".join(output))
-# with open(sys.argv[1], 'w', encoding='utf-8') as file:
-    # file.writelines(output)
+if args.update:
+    with open(args.file, 'w', encoding='utf-8') as file:
+        file.writelines(output)
+else:
+    print("".join(output))
+
 
 
 

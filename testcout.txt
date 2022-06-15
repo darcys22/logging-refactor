@@ -159,3 +159,7 @@ oxenlog::cyaninfo("Error exporting key images: " << e.what());
 oxenlog::cyaninfo("Error exporting outputs: " << e.what());
 oxenlog::cyaninfo("keys_file_exists: " << std::boolalpha << keys_file_exists << std::noboolalpha
 oxenlog::cyaninfo("keys_file_exists");
+
+auto developer_sink = std::make_shared<oxenlog::dev_sink_mt>();
+oxenlog::info("\nOutputting logs to {}", log_location);
+
