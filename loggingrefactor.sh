@@ -13,15 +13,15 @@
 #sed -i 's/MDEBUG(/OXEN_LOG(debug, /g' $1
 #sed -i 's/MTRACE(/OXEN_LOG(trace, /g' $1
 
-#sed -i 's/MGINFO(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_RED(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_GREEN(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_YELLOW(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_BLUE(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_MAGENTA(/OXEN_LOG(info, /g' $1
-#sed -i 's/MGINFO_CYAN(/OXEN_LOG(info, /g' $1
+sed -i 's/MGINFO(/oxenlog::info(/g' $1
+sed -i 's/MGINFO_RED(/oxenlog::redinfo(/g' $1
+sed -i 's/MGINFO_GREEN(/oxenlog::greeninfo(/g' $1
+sed -i 's/MGINFO_YELLOW(/oxenlog::yellowinfo(/g' $1
+sed -i 's/MGINFO_BLUE(/oxenlog::blueinfo(/g' $1
+sed -i 's/MGINFO_MAGENTA(/oxenlog::magentainfo(/g' $1
+sed -i 's/MGINFO_CYAN(/oxenlog::cyaninfo(/g' $1
 
-sed -i 's/OXEN_LOG(info, /oxenlog::info(/g' $1
+#sed -i 's/OXEN_LOG(info, /oxenlog::info(/g' $1
 
 
 

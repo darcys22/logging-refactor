@@ -27,13 +27,25 @@ with open(sys.argv[1], 'r', encoding='utf-8') as file:
 
 output = []
 for line in data:
-    result = line.find("OXEN_LOG(")
+    result = line.find("oxenlog")
+    print("line: ", line)
     if result >= 0:
-        end = find_parentheses_match(line[result+8:])
+        start_parentheses = line.find("(")
+        print("start parenthesis: ", start_parentheses)
+        print("start parenthesis: ", line[start_parentheses])
+
+        end = find_parentheses_match(line[start_parentheses:])
+        print("searching for end: ", line[start_parentheses:])
+        print("end parenthesis: ", end)
         if end == 0:
-            end = len(line[result+8:])
-        levelcomma = line[result+8:].find(",")
-        params_in_log = line[result+9+levelcomma:result+8+end].split("<<")
+            end = len(line[start_parentheses:])
+        print("end parenthesis: ", end)
+        # levelcomma = line[start_parentheses:].find(",") + start_parentheses
+        # print("level comma: ", levelcomma)
+        params_in_log = line[start_parentheses+1:start_parentheses+end].split("<<")
+
+        print("params in log ", params_in_log)
+        print("searching for params: ", line[start_parentheses+1:start_parentheses+end])
         new_string = []
         new_params = []
         for param in params_in_log:
@@ -48,15 +60,17 @@ for line in data:
         newparams = ", ".join(new_params)
         if len(newparams) > 0:
             newparams = ", " + newparams
-        output.append(line[:result+9+levelcomma] + ' "' + newstring + '"' + newparams + line[result+8+end:])
+        print("completed line ", line[:start_parentheses+1] + '"' + newstring + '"' + newparams + line[start_parentheses+end:])
+        print("\n")
+        output.append(line[:start_parentheses+1] + '"' + newstring + '"' + newparams + line[start_parentheses+end:])
 
 
     else:
         output.append(line)
 
 # print("".join(output))
-with open(sys.argv[1], 'w', encoding='utf-8') as file:
-    file.writelines(output)
+# with open(sys.argv[1], 'w', encoding='utf-8') as file:
+    # file.writelines(output)
 
 
 
