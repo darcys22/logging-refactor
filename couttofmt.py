@@ -28,24 +28,23 @@ with open(sys.argv[1], 'r', encoding='utf-8') as file:
 output = []
 for line in data:
     result = line.find("oxenlog")
-    print("line: ", line)
+    # print("line: ", line)
     if result >= 0:
         start_parentheses = line.find("(")
-        print("start parenthesis: ", start_parentheses)
-        print("start parenthesis: ", line[start_parentheses])
+        # print("start parenthesis: ", start_parentheses)
+        # print("start parenthesis: ", line[start_parentheses])
 
         end = find_parentheses_match(line[start_parentheses:])
-        print("searching for end: ", line[start_parentheses:])
-        print("end parenthesis: ", end)
+        # print("searching for end: ", line[start_parentheses:])
+        # print("end parenthesis: ", end)
         if end == 0:
             end = len(line[start_parentheses:])
-        print("end parenthesis: ", end)
-        # levelcomma = line[start_parentheses:].find(",") + start_parentheses
-        # print("level comma: ", levelcomma)
+        # print("end parenthesis: ", end)
+        # start includes the index and we do not want to include the parentheses, the end does NOT include so we just specify end
         params_in_log = line[start_parentheses+1:start_parentheses+end].split("<<")
 
-        print("params in log ", params_in_log)
-        print("searching for params: ", line[start_parentheses+1:start_parentheses+end])
+        # print("params in log ", params_in_log)
+        # print("searching for params: ", line[start_parentheses+1:start_parentheses+end])
         new_string = []
         new_params = []
         for param in params_in_log:
@@ -60,8 +59,8 @@ for line in data:
         newparams = ", ".join(new_params)
         if len(newparams) > 0:
             newparams = ", " + newparams
-        print("completed line ", line[:start_parentheses+1] + '"' + newstring + '"' + newparams + line[start_parentheses+end:])
-        print("\n")
+        # print("completed line ", line[:start_parentheses+1] + '"' + newstring + '"' + newparams + line[start_parentheses+end:])
+        # print("\n")
         output.append(line[:start_parentheses+1] + '"' + newstring + '"' + newparams + line[start_parentheses+end:])
 
 
@@ -69,8 +68,8 @@ for line in data:
         output.append(line)
 
 # print("".join(output))
-# with open(sys.argv[1], 'w', encoding='utf-8') as file:
-    # file.writelines(output)
+with open(sys.argv[1], 'w', encoding='utf-8') as file:
+    file.writelines(output)
 
 
 
