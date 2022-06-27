@@ -7,19 +7,13 @@
 #sed -i 's/LOG_PRINT_L1(/OXEN_LOG(info, /g' $1
 #sed -i 's/LOG_PRINT_L2(/OXEN_LOG(debug, /g' $1
 #sed -i 's/LOG_PRINT_L3(/OXEN_LOG(trace, /g' $1
-#sed -i 's/MERROR(/OXEN_LOG(error, /g' $1
-#sed -i 's/MWARNING(/OXEN_LOG(warn, /g' $1
-#sed -i 's/MINFO(/OXEN_LOG(info, /g' $1
-#sed -i 's/MDEBUG(/OXEN_LOG(debug, /g' $1
-#sed -i 's/MTRACE(/OXEN_LOG(trace, /g' $1
 
-sed -i 's/MGINFO(/oxenlog::info(/g' $1
-sed -i 's/MGINFO_RED(/oxenlog::redinfo(/g' $1
-sed -i 's/MGINFO_GREEN(/oxenlog::greeninfo(/g' $1
-sed -i 's/MGINFO_YELLOW(/oxenlog::yellowinfo(/g' $1
-sed -i 's/MGINFO_BLUE(/oxenlog::blueinfo(/g' $1
-sed -i 's/MGINFO_MAGENTA(/oxenlog::magentainfo(/g' $1
-sed -i 's/MGINFO_CYAN(/oxenlog::cyaninfo(/g' $1
+sed -i 's/MFATAL(/oxenlog::err(/g' $1
+sed -i 's/MERROR(/oxenlog::err(, /g' $1
+sed -i 's/MWARNING(/oxenlog::warn(/g' $1
+sed -i 's/MINFO(/oxenlog::info(/g' $1
+sed -i 's/MDEBUG(/oxenlog::debug(/g' $1
+sed -i 's/MTRACE(/oxenlog::trace(/g' $1
 
 #sed -i 's/OXEN_LOG(info, /oxenlog::info(/g' $1
 
