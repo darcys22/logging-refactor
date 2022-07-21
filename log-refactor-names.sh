@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./loggingrefactor.sh /home/sean/oxen-core/src/cryptonote_protocol/cryptonote_protocol_handler.inl
+./loggingrefactor.sh /home/sean/oxen-core/src/p2p/net_node.inl
 ./loggingrefactor.sh /home/sean/oxen-core/src/crypto/hash.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/crypto/oaes_lib.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/crypto/crypto-ops.h

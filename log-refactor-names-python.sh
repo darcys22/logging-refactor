@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python3 couttofmt.py --update --file /home/sean/oxen-core/src/cryptonote_protocol/cryptonote_protocol_handler.inl
+python3 couttofmt.py --update --file /home/sean/oxen-core/src/p2p/net_node.inl
 python3 couttofmt.py --update --file /home/sean/oxen-core/src/cryptonote_core/cryptonote_core.cpp
 python3 couttofmt.py --update --file /home/sean/oxen-core/src/crypto/hash.h
 python3 couttofmt.py --update --file /home/sean/oxen-core/src/crypto/oaes_lib.h
