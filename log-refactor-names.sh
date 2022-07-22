@@ -67,7 +67,6 @@
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/spawn.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/fs.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/common_fwd.h
-./loggingrefactor.sh /home/sean/oxen-core/src/common/perf_timer.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/string_util.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/median.h
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/error.h
@@ -268,7 +267,6 @@
 ./loggingrefactor.sh /home/sean/oxen-core/src/crypto/cn_heavy_hash_soft.cpp
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/util.cpp
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/combinator.cpp
-./loggingrefactor.sh /home/sean/oxen-core/src/common/perf_timer.cpp
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/oxen.cpp
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/i18n.cpp
 ./loggingrefactor.sh /home/sean/oxen-core/src/common/string_util.cpp

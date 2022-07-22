@@ -59,7 +59,23 @@
 
 #define LOG_CC(level, ct, message) MLOG(level, ct << message)
 
+sed -i 's/oxenlog::err( "/oxen::log::error(logcat, "/g' $1
+sed -i 's/oxenlog::warn( "/oxen::log::warning(logcat, "/g' $1
+sed -i 's/oxenlog::info( "/oxen::log::info(logcat, "/g' $1
+sed -i 's/oxenlog::debug( "/oxen::log::debug(logcat, "/g' $1
+sed -i 's/oxenlog::trace( "/oxen::log::trace(logcat, "/g' $1
 
+sed -i 's/oxenlog::err("/oxen::log::error(logcat, "/g' $1
+sed -i 's/oxenlog::warn("/oxen::log::warning(logcat, "/g' $1
+sed -i 's/oxenlog::info("/oxen::log::info(logcat, "/g' $1
+sed -i 's/oxenlog::debug("/oxen::log::debug(logcat, "/g' $1
+sed -i 's/oxenlog::trace("/oxen::log::trace(logcat, "/g' $1
+
+sed -i 's/oxenlog::err(/oxen::log::error(/g' $1
+sed -i 's/oxenlog::warn(/oxen::log::warning(/g' $1
+sed -i 's/oxenlog::info(/oxen::log::info(/g' $1
+sed -i 's/oxenlog::debug(/oxen::log::debug(/g' $1
+sed -i 's/oxenlog::trace(/oxen::log::trace(/g' $1
 
 #sed '/^OXEN_LOG/s/search_string/replace_string/'
 #echo 'OXEN_LOG("x: " << x << " y: " << y )' | sed '/^OXEN_LOG/s/"\s<<\s\(.*\)\s\(.*\))/{}\2,\1)/g' | sed '/^OXEN_LOG/s/"\s<<\s\(.*\)\s\(.*\))/{}\2,\1)/g'
