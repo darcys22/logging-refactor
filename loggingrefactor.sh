@@ -59,23 +59,20 @@
 
 #define LOG_CC(level, ct, message) MLOG(level, ct << message)
 
-sed -i 's/oxenlog::err( "/oxen::log::error(logcat, "/g' $1
-sed -i 's/oxenlog::warn( "/oxen::log::warning(logcat, "/g' $1
-sed -i 's/oxenlog::info( "/oxen::log::info(logcat, "/g' $1
-sed -i 's/oxenlog::debug( "/oxen::log::debug(logcat, "/g' $1
-sed -i 's/oxenlog::trace( "/oxen::log::trace(logcat, "/g' $1
-
-sed -i 's/oxenlog::err("/oxen::log::error(logcat, "/g' $1
-sed -i 's/oxenlog::warn("/oxen::log::warning(logcat, "/g' $1
-sed -i 's/oxenlog::info("/oxen::log::info(logcat, "/g' $1
-sed -i 's/oxenlog::debug("/oxen::log::debug(logcat, "/g' $1
-sed -i 's/oxenlog::trace("/oxen::log::trace(logcat, "/g' $1
-
-sed -i 's/oxenlog::err(/oxen::log::error(/g' $1
-sed -i 's/oxenlog::warn(/oxen::log::warning(/g' $1
-sed -i 's/oxenlog::info(/oxen::log::info(/g' $1
-sed -i 's/oxenlog::debug(/oxen::log::debug(/g' $1
-sed -i 's/oxenlog::trace(/oxen::log::trace(/g' $1
+sed -i 's/oxenlog::redwarn( "/oxen::log::warning(logcat, fmt::format(bg(fmt::terminal_color::red), "/g' $1
+sed -i 's/oxenlog::redwarn("/oxen::log::warning(logcat, fmt::format(bg(fmt::terminal_color::red), "/g' $1
+sed -i 's/oxenlog::yellowwarn( "/oxen::log::warning(logcat, fmt::format(bg(fmt::terminal_color::yellow), "/g' $1
+sed -i 's/oxenlog::yellowwarn("/oxen::log::warning(logcat, fmt::format(bg(fmt::terminal_color::yellow), "/g' $1
+sed -i 's/oxenlog::yellowinfo( "/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::yellow), "/g' $1
+sed -i 's/oxenlog::yellowinfo("/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::yellow), "/g' $1
+sed -i 's/oxenlog::greeninfo( "/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::green), "/g' $1
+sed -i 's/oxenlog::greeninfo("/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::green), "/g' $1
+sed -i 's/oxenlog::blueinfo( "/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::blue), "/g' $1
+sed -i 's/oxenlog::blueinfo("/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::blue), "/g' $1
+sed -i 's/oxenlog::redinfo( "/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::red), "/g' $1
+sed -i 's/oxenlog::redinfo("/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::red), "/g' $1
+sed -i 's/oxenlog::cyaninfo( "/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::cyan), "/g' $1
+sed -i 's/oxenlog::cyaninfo("/oxen::log::info(logcat, fmt::format(bg(fmt::terminal_color::cyan), "/g' $1
 
 #sed '/^OXEN_LOG/s/search_string/replace_string/'
 #echo 'OXEN_LOG("x: " << x << " y: " << y )' | sed '/^OXEN_LOG/s/"\s<<\s\(.*\)\s\(.*\))/{}\2,\1)/g' | sed '/^OXEN_LOG/s/"\s<<\s\(.*\)\s\(.*\))/{}\2,\1)/g'
