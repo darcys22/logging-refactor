@@ -37,7 +37,7 @@ with open(args.file, 'r', encoding='utf-8') as file:
 
 output = []
 for line in data:
-    oxenlog_position = line.find("oxenlog")
+    oxenlog_position = line.find("oxen::log")
     cout_position = line.find("<<")
     # print("line: ", line)
     if oxenlog_position >= 0 and cout_position >= 0:
@@ -51,6 +51,8 @@ for line in data:
         if end == 0:
             end = len(line[start_parentheses:])
         # print("end parenthesis: ", end)
+        if line[start_parenthesis+1:start_parenthesis+9] == "logcat, ":
+            start_parenthesis = start_parenthesis + 8
         # start includes the index and we do not want to include the parentheses, the end does NOT include so we just specify end
         params_in_log = line[start_parentheses+1:start_parentheses+end].split("<<")
 
